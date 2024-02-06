@@ -1,0 +1,42 @@
+.con{
+    background-color:#f9fafc;
+    /* height: 590px; */
+}
+.c1{
+    background-color: #a6cceb;
+    height: 160px;
+    width: 180px;
+}
+.c2{
+    background-color: #cf2e2e;
+    height: 160px;
+    width: 180px;
+}
+.c3{
+    background-color:#ff6900;
+    height: 160px;
+    width: 180px;
+}
+.c4{
+    background-color: #7bdcb5;
+    height: 160px;
+    width: 180px;
+}
+
+.icon{
+    color: white;
+    margin-top: 35px;
+    font-size: 40px;
+}
+p{
+    color:white
+}
+.rr{
+    color: #f84996;
+    
+}
+.r1{
+    background-color: black;
+    color: white;
+}
+
