@@ -4,6 +4,9 @@ import { AboutComponent } from './about/about.component';
 import { MediaComponent } from './media/media.component';
 import { ImagesComponent } from './images/images.component';
 import { VedioComponent } from './vedio/vedio.component';
+import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
+import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
+import { HomeComponent } from './admin/home/home.component';
 
 export const routes: Routes = [
     {path:"",component:MainpageComponent},
@@ -12,5 +15,10 @@ export const routes: Routes = [
     {path:"media",component:MediaComponent,children:[
         {path:"images",component:ImagesComponent},
         {path:"vedio",component:VedioComponent}
+    ]},
+    {path:"admin-log",component:AdminLoginComponent},
+    {path:"dash",component:AdminDashboardComponent,children:[
+        {path:"",component:HomeComponent},
+        {path:"home",component:HomeComponent}
     ]}
 ];

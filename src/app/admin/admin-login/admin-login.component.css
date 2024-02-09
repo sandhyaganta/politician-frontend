@@ -1,0 +1,11 @@
+.car{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.con{
+    background-image: url("../../../assets/photos/loginpage.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 670px;
+    
+   
+}
