@@ -1,0 +1,15 @@
+.con{
+    background: url("../../../assets/photos/userlog.jfif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 670px;
+}
+.reg{
+    color: palevioletred;
+}
+.f1{
+    color:blue;
+}
+/* .col{
+    color: white;
+} */

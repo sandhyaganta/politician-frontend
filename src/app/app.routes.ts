@@ -7,6 +7,8 @@ import { VedioComponent } from './vedio/vedio.component';
 import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
 import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
 import { HomeComponent } from './admin/home/home.component';
+import { UserLoginComponent } from './user/user-login/user-login.component';
+import { UserRegistrationComponent } from './user/user-registration/user-registration.component';
 
 export const routes: Routes = [
     {path:"",component:MainpageComponent},
@@ -20,5 +22,9 @@ export const routes: Routes = [
     {path:"dash",component:AdminDashboardComponent,children:[
         {path:"",component:HomeComponent},
         {path:"home",component:HomeComponent}
-    ]}
+    ]},
+    {path:"user-log",component:UserLoginComponent},
+    {path:"user-reg",component:UserRegistrationComponent}
+    
+    
 ];
