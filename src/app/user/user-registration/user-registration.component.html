@@ -7,6 +7,7 @@
         <div class="card car mt-3">
           <div class="card-body">
             <div class="container">
+              <form [formGroup]="Registrationform">
               <div class="row">
                 <div class="col-sm-6">
                   <div class="form-floating mt-3 mb-3">
@@ -14,10 +15,11 @@
                       type="file"
                       class="form-control"
                       width="50"
-                      id="pwd"
+                      id="photo"
                       placeholder="paste ur photo"
-                      name="pswd"
+                      name="photo" formControlName="photo"
                     />
+                    <div class="text-danger"  *ngIf="photo.errors?.['required'] && (photo.dirty || photo.touched)">photo is required</div>
                     <label for="file">Pohto</label>
                   </div>
                   <div class="form-floating mt-3 mb-3">
@@ -25,10 +27,13 @@
                       type="text"
                       class="form-control"
                       width="50"
-                      id="pwd"
-                      placeholder="paste ur photo"
-                      name="pswd"
+                      id="Fristname"
+                      placeholder="Fristname"
+                      name="Fristname" formControlName="fristname"
                     />
+                    <div class="text-danger"  *ngIf="fristname.errors?.['required'] && (fristname.dirty || fristname.touched)">fristname is required</div>
+                    <div class="text-danger"  *ngIf="fristname.errors?.['minlength'] && (fristname.dirty || fristname.touched)">fristname too short</div>
+            
                     <label for="text">Fristname</label>
                   </div>
                   <div class="form-floating mt-3 mb-3">
@@ -36,10 +41,13 @@
                       type="text"
                       class="form-control"
                       width="50"
-                      id="pwd"
-                      placeholder="paste ur photo"
-                      name="pswd"
+                      id="Lastname"
+                      placeholder="Lastname"
+                      name="Lastname" formControlName="lastname"
                     />
+                    <div class="text-danger"  *ngIf="lastname.errors?.['required'] && (lastname.dirty || lastname.touched)">lastname is required</div>
+                    <div class="text-danger"  *ngIf="lastname.errors?.['minlength'] && (lastname.dirty || lastname.touched)">lastname too short</div>
+            
                     <label for="text">Lastname</label>
                   </div>
                   <div class="form-floating mt-3 mb-3">
@@ -47,10 +55,13 @@
                       type="text"
                       class="form-control"
                       width="50"
-                      id="pwd"
-                      placeholder="paste ur photo"
-                      name="pswd"
+                      id="Username"
+                      placeholder="Username"
+                      name="Username" formControlName="username"
                     />
+                    <div class="text-danger"  *ngIf="username.errors?.['required'] && (username.dirty || username.touched)">username is required</div>
+                    <div class="text-danger"  *ngIf="username.errors?.['minlength'] && (username.dirty || username.touched)">username too short</div>
+            
                     <label for="text">Username</label>
                   </div>
                   <div class="form-floating mt-3 mb-3">
@@ -59,9 +70,12 @@
                       class="form-control"
                       width="50"
                       id="pwd"
-                      placeholder="paste ur photo"
-                      name="pswd"
+                      placeholder="Password"
+                      name="pswd" formControlName="password"
                     />
+                    <div class="text-danger"  *ngIf="password.errors?.['required'] && (password.dirty || password.touched)">Password is required</div>
+                    <div class="text-danger"  *ngIf="password.errors?.['minlength'] && (password.dirty || password.touched)">Password too short</div>
+            
                     <label for="password">Password</label>
                   </div>
                   <div class="form-floating mt-3 mb-3">
@@ -69,10 +83,13 @@
                       type="text"
                       class="form-control"
                       width="50"
-                      id="pwd"
-                      placeholder="paste ur photo"
-                      name="pswd"
+                      id="Fathername"
+                      placeholder="Fathername"
+                      name="Fathername" formControlName="fathername"
                     />
+                    <div class="text-danger"  *ngIf="fathername.errors?.['required'] && (fathername.dirty || fathername.touched)">Fathername is required</div>
+                    <div class="text-danger"  *ngIf="fathername.errors?.['minlength'] && (fathername.dirty || fathername.touched)">Fathername too short</div>
+            
                     <label for="text">Fathername</label>
                   </div>
 
@@ -91,10 +108,13 @@
                       type="number"
                       class="form-control"
                       width="50"
-                      id="pwd"
-                      placeholder="paste ur photo"
-                      name="pswd"
+                      id="phoneNumber"
+                      placeholder="phoneNumber"
+                      name="phoneNumber" formControlName="mobileno"
                     />
+                    <div class="text-danger"  *ngIf="mobileno.errors?.['required'] && (mobileno.dirty || mobileno.touched)">Mobileno is required</div>
+                    <div class="text-danger"  *ngIf="mobileno.errors?.['minlength'] && (mobileno.dirty || mobileno.touched)">Mobileno too short</div>
+            
                     <label for="Number">Phone Number</label>
                   </div>
                   <div class="input-group">
@@ -121,10 +141,13 @@
                       type="text"
                       class="form-control"
                       width="50"
-                      id="pwd"
-                      placeholder="paste ur photo"
-                      name="pswd"
+                      id="Caste"
+                      placeholder="Caste"
+                      name="Caste" formControlName="caste"
                     />
+                    <div class="text-danger"  *ngIf="caste.errors?.['required'] && (caste.dirty || caste.touched)">Caste is required</div>
+                    
+            
                     <label for="text">Caste</label>
                   </div>
                   <div class="form-floating mt-3 mb-3">
@@ -132,10 +155,13 @@
                       type="text"
                       class="form-control"
                       width="50"
-                      id="pwd"
-                      placeholder="paste ur photo"
-                      name="pswd"
+                      id="Village"
+                      placeholder="Village"
+                      name="Village" formControlName="village"
                     />
+                    <div class="text-danger"  *ngIf="village.errors?.['required'] && (village.dirty || village.touched)">Village is required</div>
+                    <div class="text-danger"  *ngIf="village.errors?.['minlength'] && (village.dirty || village.touched)">Village too short</div>
+            
                     <label for="text">Village</label>
                   </div>
                   <div class="form-floating mt-3 mb-3">
@@ -143,10 +169,13 @@
                       type="text"
                       class="form-control"
                       width="50"
-                      id="pwd"
-                      placeholder="paste ur photo"
-                      name="pswd"
+                      id="Mandal"
+                      placeholder="Mandal"
+                      name="Mandal" formControlName="mandal"
                     />
+                    <div class="text-danger"  *ngIf="mandal.errors?.['required'] && (mandal.dirty || mandal.touched)">Mandalis required</div>
+                    <div class="text-danger"  *ngIf="mandal.errors?.['minlength'] && (mandal.dirty || mandal.touched)">Mandal too short</div>
+            
                     <label for="text">Mandal</label>
                   </div>
                   <div class="form-floating mt-3 mb-3">
@@ -154,15 +183,19 @@
                       type="text"
                       class="form-control"
                       width="50"
-                      id="pwd"
-                      placeholder="paste ur photo"
-                      name="pswd"
+                      id="District"
+                      placeholder="District"
+                      name="District" formControlName="district"
                     />
+                    <div class="text-danger"  *ngIf="district.errors?.['required'] && (district.dirty || district.touched)">District is required</div>
+                    <div class="text-danger"  *ngIf="district.errors?.['minlength'] && (district.dirty || district.touched)">District too short</div>
+            
                     <label for="text">District</label>
                   </div>
                   <p class="mt-5 pt" routerLink="/user-log">you already Account go to login</p>
                 </div>
               </div>
+              </form>
 
               
             </div>

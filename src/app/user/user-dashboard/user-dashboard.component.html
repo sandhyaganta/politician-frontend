@@ -1,1 +1,24 @@
-<p>user-dashboard works!</p>
+<div class="container-fluid con">
+    <div class="row rr p-2">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-2">
+            <button type="button" class="btn"> View Profile</button>  
+        </div>
+        <div class="col-sm-2">
+            <button type="button" class="btn"> View post</button>
+        </div>
+        <div class="col-sm-2">
+            <button type="button" class="btn">Complients</button>
+        </div>
+        <div class="col-sm-2">
+            <button type="button" class="btn" routerLink="/mainpage">Logout</button>
+
+        </div>
+        <div class="col-sm-2"></div>
+    </div>
+    <div class="row">
+        <div class="col-sm">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

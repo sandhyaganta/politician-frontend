@@ -9,6 +9,8 @@ import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard
 import { HomeComponent } from './admin/home/home.component';
 import { UserLoginComponent } from './user/user-login/user-login.component';
 import { UserRegistrationComponent } from './user/user-registration/user-registration.component';
+import { UserDashboardComponent } from './user/user-dashboard/user-dashboard.component';
+import { Home1Component } from './user/home1/home1.component';
 
 export const routes: Routes = [
     {path:"",component:MainpageComponent},
@@ -24,7 +26,11 @@ export const routes: Routes = [
         {path:"home",component:HomeComponent}
     ]},
     {path:"user-log",component:UserLoginComponent},
-    {path:"user-reg",component:UserRegistrationComponent}
+    {path:"user-reg",component:UserRegistrationComponent},
+    {path:"dash1",component:UserDashboardComponent,children:[
+        {path:"",component:Home1Component},
+        {path:"home1",component:Home1Component}
+    ]}
     
     
 ];
