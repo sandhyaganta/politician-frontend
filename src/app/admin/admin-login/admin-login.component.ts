@@ -32,6 +32,9 @@ export class AdminLoginComponent {
   adminlogin(){
     this.api.adminLogin(this.Loginform.value).subscribe((res:any)=>{
       console.log("res",res);
+      console.log(res.token);
+      localStorage.setItem("token",res.token)
+
       if(res){
         alert("login succesfuly");
         this.router.navigate(['/dash'])

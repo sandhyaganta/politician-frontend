@@ -34,6 +34,8 @@ export class UserLoginComponent {
     // console.log("userloginsucessfuly",this.Loginform.value)
     this.api.userLogin(this.Loginform.value).subscribe((res:any) =>{
       console.log("res",res);
+      console.log(res.token)
+      localStorage.setItem("token",res.token)
       localStorage.setItem("id",res._id)
       if(res){
         alert("login successfuly")
