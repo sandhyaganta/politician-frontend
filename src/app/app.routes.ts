@@ -11,6 +11,9 @@ import { UserLoginComponent } from './user/user-login/user-login.component';
 import { UserRegistrationComponent } from './user/user-registration/user-registration.component';
 import { UserDashboardComponent } from './user/user-dashboard/user-dashboard.component';
 import { Home1Component } from './user/home1/home1.component';
+import { ViewProfileComponent } from './user/view-profile/view-profile.component';
+import { ViewPostComponent } from './user/view-post/view-post.component';
+import { ComplientsComponent } from './user/complients/complients.component';
 
 export const routes: Routes = [
     {path:"",component:MainpageComponent},
@@ -29,7 +32,10 @@ export const routes: Routes = [
     {path:"user-reg",component:UserRegistrationComponent},
     {path:"dash1",component:UserDashboardComponent,children:[
         {path:"",component:Home1Component},
-        {path:"home1",component:Home1Component}
+        {path:"home1",component:Home1Component},
+        {path:"profile",component:ViewProfileComponent},
+        {path:"viewpost",component:ViewPostComponent},
+        {path:"complients",component:ComplientsComponent}
     ]}
     
     

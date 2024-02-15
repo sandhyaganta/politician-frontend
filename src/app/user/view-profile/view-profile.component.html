@@ -1,1 +1,176 @@
-<p>view-profile works!</p>
+<div class="container-fluid mt-3">
+  <div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">
+      <div>
+        <div class="card car">
+          <div class="card-body">
+            <div class="container fw-bold">
+              <div class="row">
+                <div class="col-sm-6">
+                  <p>id:<span>{{user._id}}</span></p>
+                  <p>Photo:<img src="{{user.photo}}"></p>
+                  <p>Fristname:<span>{{user.fristname}}</span></p>
+                  <p>Lastname:<span>{{user.lastname}}</span></p>
+                  <p>Username:<span>{{user.username}}</span></p>
+                  <p>Fathername:<span>{{user.fathername}}</span></p>
+                  </div>
+                  <div class="col-sm-6">
+
+                  <p>Mobileno:<span>{{user.mobileno}}</span></p>
+                  <p>Caste:<span>{{user.caste}}</span></p>
+                  <p>Village:<span>{{user.village}}</span></p>
+                  <p>Mandal:<span>{{user.mandal}}</span></p>
+                  <p>District:<span>{{user.district}}</span></p>
+                  
+                </div>
+                <div class="text-center">
+                  <button
+                  type="button "
+                  class="btn btn-primary  mt-3"
+                  data-bs-toggle="modal"
+                  data-bs-target="#exampleModal"(click)="useredit(user)"
+                >
+                  Update
+                </button>
+                </div>
+                <!-- Button trigger modal -->
+                
+
+                <!-- Modal -->
+                <div
+                  class="modal fade"
+                  id="exampleModal"
+                  tabindex="-1"
+                  aria-labelledby="exampleModalLabel"
+                  aria-hidden="true"
+                >
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">
+                          Update Profile
+                        </h1>
+                        <button
+                          type="button"
+                          class="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                        ></button>
+                      </div>
+                      <div class="modal-body">
+                        <form [formGroup]="updateForm">
+                            <div class="row">
+                                <div class="col">
+                                    <label>Fristname:<span><input
+                                        type="text"
+                                        class="form-control"
+                                        width="50"
+                                        aria-label="Sizing example input"
+                                        aria-describedby="inputGroup-sizing-lg"
+                                        formControlName="fristname"
+                                      /> 
+                                    </span></label>
+                                    <label>Lastname:<span><input
+                                        type="text"
+                                        class="form-control"
+                                        width="50"
+                                        aria-label="Sizing example input"
+                                        aria-describedby="inputGroup-sizing-lg"
+                                        formControlName="lastname"
+                                      /> 
+                                    </span></label>
+                                    <label>Username:<span><input
+                                        type="text"
+                                        class="form-control"
+                                        width="50"
+                                        aria-label="Sizing example input"
+                                        aria-describedby="inputGroup-sizing-lg"
+                                        formControlName="username"
+                                      /> 
+                                    </span></label>
+                                    <label>Fathername:<span><input
+                                        type="text"
+                                        class="form-control"
+                                        width="50"
+                                        aria-label="Sizing example input"
+                                        aria-describedby="inputGroup-sizing-lg"
+                                        formControlName="fathername"
+                                      /> 
+                                    </span></label>
+                                    <label>Mobileno:<span><input
+                                        type="text"
+                                        class="form-control"
+                                        width="50"
+                                        aria-label="Sizing example input"
+                                        aria-describedby="inputGroup-sizing-lg"
+                                        formControlName="mobileno"
+                                      /> 
+                                    </span></label>
+                                    <label>Caste:<span><input
+                                        type="text"
+                                        class="form-control"
+                                        width="50"
+                                        aria-label="Sizing example input"
+                                        aria-describedby="inputGroup-sizing-lg"
+                                        formControlName="caste"
+                                      /> 
+                                    </span></label>
+                                    <label>Village:<span><input
+                                        type="text"
+                                        class="form-control"
+                                        width="50"
+                                        aria-label="Sizing example input"
+                                        aria-describedby="inputGroup-sizing-lg"
+                                        formControlName="village"
+                                      /> 
+                                    </span></label>
+                                    <label>Mandal:<span><input
+                                        type="text"
+                                        class="form-control"
+                                        width="50"
+                                        aria-label="Sizing example input"
+                                        aria-describedby="inputGroup-sizing-lg"
+                                        formControlName="mandal"
+                                      /> 
+                                    </span></label>
+                                    <label>District:<span><input
+                                        type="text"
+                                        class="form-control"
+                                        width="50"
+                                        aria-label="Sizing example input"
+                                        aria-describedby="inputGroup-sizing-lg"
+                                        formControlName="district"
+                                      /> 
+                                    </span></label>
+                                </div>
+
+
+                            </div>
+
+                        </form>
+                      </div>
+                      <div class="modal-footer">
+                        <button
+                          type="button"
+                          class="btn btn-secondary"
+                          data-bs-dismiss="modal"
+                        >
+                          Close
+                        </button>
+                        <button type="button" class="btn btn-primary" (click)="update()">
+                          Save changes
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-3"></div>
+  </div>
+</div>

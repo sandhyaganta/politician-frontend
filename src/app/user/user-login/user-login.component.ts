@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule,Validators } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
+import { UserServiceService } from '../../user-service.service';
 
 @Component({
   selector: 'app-user-login',
@@ -12,7 +13,8 @@ import { RouterLink } from '@angular/router';
 })
 export class UserLoginComponent {
   Loginform!:FormGroup;
-  constructor(private form:FormBuilder){}
+  users:any
+  constructor(private form:FormBuilder,private api:UserServiceService,private router:Router){}
   ngOnInit():void{
     this.Loginform=new FormGroup({
       username: new FormControl('',[Validators.required,Validators.minLength(3)]),
@@ -27,6 +29,22 @@ export class UserLoginComponent {
   }
   get password() :FormControl{
     return this.Loginform.get('password') as FormControl;
+  }
+  user(){
+    // console.log("userloginsucessfuly",this.Loginform.value)
+    this.api.userLogin(this.Loginform.value).subscribe((res:any) =>{
+      console.log("res",res);
+      localStorage.setItem("id",res._id)
+      if(res){
+        alert("login successfuly")
+        this.router.navigate(['/dash1'])
+
+      }
+      else{
+        alert("login failed")
+
+      }
+    })
   }
    
 }
