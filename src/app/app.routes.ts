@@ -14,6 +14,9 @@ import { Home1Component } from './user/home1/home1.component';
 import { ViewProfileComponent } from './user/view-profile/view-profile.component';
 import { ViewPostComponent } from './user/view-post/view-post.component';
 import { ComplientsComponent } from './user/complients/complients.component';
+import { AdminViewuserComponent } from './admin/admin-viewuser/admin-viewuser.component';
+import { AdminPostComponent } from './admin/admin-post/admin-post.component';
+import { AdminViewcomplientsComponent } from './admin/admin-viewcomplients/admin-viewcomplients.component';
 
 export const routes: Routes = [
     {path:"",component:MainpageComponent},
@@ -26,7 +29,10 @@ export const routes: Routes = [
     {path:"admin-log",component:AdminLoginComponent},
     {path:"dash",component:AdminDashboardComponent,children:[
         {path:"",component:HomeComponent},
-        {path:"home",component:HomeComponent}
+        {path:"home",component:HomeComponent},
+        {path:"user",component:AdminViewuserComponent},
+        {path:"post",component:AdminPostComponent},
+        {path:"complients1",component:AdminViewcomplientsComponent}
     ]},
     {path:"user-log",component:UserLoginComponent},
     {path:"user-reg",component:UserRegistrationComponent},

@@ -1,0 +1,47 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8">
+      <div *ngFor="let r of users">
+        <div class="card car mt-3 mb-3 fw-bold">
+          <div class="card-body">
+            <div class="container">
+              <div class="row">
+                <div class="col-sm-6">
+                  <p>
+                    id:<span>{{ r._id }}</span>
+                  </p>
+                  <p>Photo:<img src="{{r.photo }}" /></p>
+                  <p>
+                    Fristname:<span>{{ r.fristname }}</span>
+                  </p>
+                  <p>
+                    Lastname:<span>{{ r.lastname }}</span>
+                  </p>
+                  <p>
+                    Username:<span>{{ r.username }}</span>
+                  </p>
+                  <p>
+                    Fathername:<span>{{ r.fathername }}</span>
+                  </p>
+                </div>
+                <div class="col-sm-6">
+                    <p>Mobileno:<span>{{r.mobileno}}</span></p>
+                  <p>Caste:<span>{{r.caste}}</span></p>
+                  <p>Village:<span>{{r.village}}</span></p>
+                  <p>Mandal:<span>{{r.mandal}}</span></p>
+                  <p>District:<span>{{r.district}}</span></p>
+
+                </div>
+                <div class="text-center">
+                    <button class="btn btn-primary" type="submit" (click)="userdelete(r._id)">Delete</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-2"></div>
+  </div>
+</div>

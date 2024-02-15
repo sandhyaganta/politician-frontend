@@ -26,5 +26,12 @@ export class UserServiceService {
   userupdate(data:any){
     return this.http.put('http://localhost:6010/user/updateById/'+data.id,data)
   }
+  getallusers(){
+    return this.http.get('http://localhost:6010/user/get/users');
+
+  }
+  userdelete(id:any){
+    return this.http.delete('http://localhost:6010/user/deleteById/'+id)
+  }
   
 }

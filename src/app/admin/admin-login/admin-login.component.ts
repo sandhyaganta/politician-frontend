@@ -1,8 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import Module from 'module';
+import { AdminServiceService } from '../../admin-service.service';
 
 @Component({
   selector: 'app-admin-login',
@@ -13,7 +14,7 @@ import Module from 'module';
 })
 export class AdminLoginComponent {
   Loginform!:FormGroup
-  constructor(private form:FormBuilder){}
+  constructor(private form:FormBuilder,private api:AdminServiceService,private router:Router){}
   ngOnInit():void{
     this.Loginform= new FormGroup({
      username: new FormControl('',[Validators.required, Validators.minLength(3)]),
@@ -26,6 +27,19 @@ export class AdminLoginComponent {
   }
   get password():FormControl{
     return this.Loginform.get('password') as FormControl;
+  }
+
+  adminlogin(){
+    this.api.adminLogin(this.Loginform.value).subscribe((res:any)=>{
+      console.log("res",res);
+      if(res){
+        alert("login succesfuly");
+        this.router.navigate(['/dash'])
+      }
+      else{
+        alert("login failed")
+      }
+    })
   }
 
 }
