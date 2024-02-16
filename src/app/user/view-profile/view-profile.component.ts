@@ -17,6 +17,8 @@ export class ViewProfileComponent {
   constructor(private api:UserServiceService,private form:FormBuilder){}
   ngOnInit():void{
     const u=localStorage.getItem("id");
+    
+ console.log("uuuuu",u)
  this.api.getUser(u).subscribe((res:any) => {
   this.user=res
  console.log("user",this.user)

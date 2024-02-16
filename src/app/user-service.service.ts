@@ -27,6 +27,8 @@ export class UserServiceService {
     return this.http.post('http://localhost:6010/user/login',data);
   }
   getUser(id:any){
+    console.log(id,'id');
+    
     return this.http.get('http://localhost:6010/user/getById/'+id,this.jwttoken());
   }
   userupdate(data:any){

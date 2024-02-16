@@ -34,9 +34,10 @@ export class UserLoginComponent {
     // console.log("userloginsucessfuly",this.Loginform.value)
     this.api.userLogin(this.Loginform.value).subscribe((res:any) =>{
       console.log("res",res);
-      console.log(res.token)
+      console.log(res.token);
+      console.log(res.users._id);
       localStorage.setItem("token",res.token)
-      localStorage.setItem("id",res._id)
+      localStorage.setItem("id",res.users._id)
       if(res){
         alert("login successfuly")
         this.router.navigate(['/dash1'])
