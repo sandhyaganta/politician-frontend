@@ -1,1 +1,69 @@
-<p>view-post works!</p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8">
+      <div *ngFor="let r of posts">
+        <div class="card mb-2">
+          <div class="card-body">
+            <div class="container fw-bold">
+              <div class="row">
+                <div class="col-sm-6">
+                  <p>
+                    video/photoname:<span>{{ r.title }}</span>
+                  </p>
+
+                  <ng-container *ngIf="r.type === 'video'" ; else photoblock>                  </ng-container>
+
+                    <div>
+                      <p>{{ r.files }}</p>
+                      <video width="320" height="240" controls>
+                        <source src="{{ r.files }}" type="video/mp4" />
+                      </video>
+                    </div>
+
+                  <ng-template #photoblock>
+                    <div *ngIf="r.type === 'photo'">
+                      <p>{{ r.files }}</p>
+                      <img src="{{ r.files }}" alt="image" />
+                    </div>
+                  </ng-template>
+                </div>
+              </div>
+              <form [formGroup]="uploadform">
+                <div class="row">
+                  <div class="col-sm-3">
+                    <button type="submit" class="btn" >
+                     
+                      <i class="bi bi-hand-thumbs-up"  formControlName="like" (click)="like('1')"></i>
+                    </button>
+                  </div>
+                  <div class="col-sm-5">
+                    <div class="form-floating">
+                      <textarea
+                        class="form-control"
+                        placeholder="write a comment here"
+                        id="floatingTextarea"
+                        formControlName="Comments"
+                      ></textarea>
+                      <label for="floatingTextarea">Comments</label>
+                    </div>
+                  </div>
+                  <div class="text-center mt-3">
+                    <button
+                      class="btn btn-primary"
+                      type="submit"
+                      (click)="comment()"
+                    >
+                      submit
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-2"></div>
+  </div>
+</div>

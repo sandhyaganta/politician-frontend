@@ -32,7 +32,7 @@ export class UserServiceService {
     return this.http.get('http://localhost:6010/user/getById/'+id,this.jwttoken());
   }
   userupdate(data:any){
-    return this.http.put('http://localhost:6010/user/updateById/'+data.id,data,this.jwttoken())
+    return this.http.put('http://localhost:6010/user/updateById/'+data.id,data,this.jwttoken());
   }
   getallusers(){
     return this.http.get('http://localhost:6010/user/get/users',this.jwttoken());
@@ -41,5 +41,22 @@ export class UserServiceService {
   userdelete(id:any){
     return this.http.delete('http://localhost:6010/user/deleteById/'+id,this.jwttoken())
   }
+  getallpost(){
+    return this.http.get('http://localhost:6010/post/get/posts')
+  }
+  userpost(data:any){
+    return this.http.post("http://localhost:6010/userpost/comment",data)
+  }
+  userlike(data:any){
+    return this.http.post("http://localhost:6010/userlike/like",data)
+
+  }
+  getlike(){
+    return this.http.get("http://localhost:6010/userlike/getlike")
+  }
+  likeupdate(data:any){
+    return this.http.put("http://localhost:6010/userlike/updateById/"+data.id,data)
+  }
+
   
 }

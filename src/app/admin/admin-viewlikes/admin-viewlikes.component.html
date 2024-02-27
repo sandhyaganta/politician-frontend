@@ -1,0 +1,44 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8">
+      <div *ngFor="let r of posts">
+        <div class="card">
+          <div class="card-body">
+            <div class="container fw-bold">
+              <div class="row">
+                <div class="col-sm-6">
+                  <p>
+                    video/photoname:<span>{{ r.title }}</span>
+                  </p>
+
+                  <ng-container *ngIf="r.type === 'video'" ; else photoblock>
+                  </ng-container>
+
+                  <div>
+                    <p>{{ r.files }}</p>
+                    <video width="320" height="240" controls>
+                      <source src="{{ r.files }}" type="video/mp4" />
+                    </video>
+                  </div>
+
+                  <ng-template #photoblock>
+                    <div *ngIf="r.type === 'photo'">
+                      <p>{{ r.files }}</p>
+                      <img src="{{ r.files }}" alt="image" />
+                    </div>
+                  </ng-template>
+
+                  <p>like:</p>
+                  <p>comments:</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-2"></div>
+  </div>
+</div>
