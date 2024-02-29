@@ -29,7 +29,6 @@ export class ViewPostComponent {
   ) {}
   ngOnInit(): void {
     this.uploadform = this.form.group({
-      like: [''],
       comments: [''],
     });
 
@@ -48,15 +47,16 @@ export class ViewPostComponent {
 
   like(l:any) {
     let s = {
-      like:l
+      id:l._id,
+      like:(l.like)+1
     }
-    this.service.adminpost(s).subscribe((res: any) => {
+    this.service.postupdate(s).subscribe((res: any) => {
       console.log('res', res);
     });
   }
 
   comment() {
-    this.api.userpost(this.uploadform.value).subscribe((res: any) => {
+    this.api.comments(this.uploadform.value).subscribe((res: any) => {
       console.log(res, 'usercheck');
     });
   }

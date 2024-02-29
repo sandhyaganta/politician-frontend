@@ -32,4 +32,10 @@ export class AdminServiceService {
   postupdate(data:any){
     return this.http.put('http://localhost:6010/post/updateById/'+data.id,data)
   }
+  adminreplay(data:any){
+    return this.http.post("http://localhost:6010/replay/creatreplay",data)
+  }
+  getreplay(id:any){
+    return this.http.get("http://localhost:6010/replay/getById/"+id)
+  }
 }

@@ -57,6 +57,18 @@ export class UserServiceService {
   likeupdate(data:any){
     return this.http.put("http://localhost:6010/userlike/updateById/"+data.id,data)
   }
+  usercomplients(data:any){
+    return this.http.post("http://localhost:6010/complients/creatcomplients",data)
+  }
+  getcomplients(id:any){
+    return this.http.get("http://localhost:6010/complients/getById/"+id)
+  }
+  comments(data:any){
+    return this.http.post("http://localhost:6010/comments/comment",data)
+  }
+  getcomment(){
+    return this.http.get("http://localhost:6010/comments/get/comments",)
+  }
 
   
 }

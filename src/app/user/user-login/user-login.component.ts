@@ -38,6 +38,10 @@ export class UserLoginComponent {
       console.log(res.users._id);
       localStorage.setItem("token",res.token)
       localStorage.setItem("id",res.users._id)
+      localStorage.setItem("username",res.username)
+      localStorage.setItem("village",res.village)
+      localStorage.setItem("mandal",res.mandal)
+      localStorage.setItem("district",res.district)
       if(res){
         alert("login successfuly")
         this.router.navigate(['/dash1'])

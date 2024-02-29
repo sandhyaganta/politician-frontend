@@ -32,10 +32,10 @@ export class AdminPostComponent {
       
     });
 
-    this.api.getallpost().subscribe((res: any) => {
-      this.post = res;
-      console.log(this.post)
-    });
+    // this.api.getallpost().subscribe((res: any) => {
+    //   this.post = res;
+    //   console.log(this.post)
+    // });
   }
 
   select(event: any) {

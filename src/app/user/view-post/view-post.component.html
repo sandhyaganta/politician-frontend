@@ -9,33 +9,25 @@
               <div class="row">
                 <div class="col-sm-6">
                   <p>
-                    video/photoname:<span>{{ r.title }}</span>
+                    <span>{{ r.title }}</span>
                   </p>
-
-                  <ng-container *ngIf="r.type === 'video'" ; else photoblock>                  </ng-container>
-
-                    <div>
-                      <p>{{ r.files }}</p>
-                      <video width="320" height="240" controls>
-                        <source src="{{ r.files }}" type="video/mp4" />
-                      </video>
-                    </div>
-
-                  <ng-template #photoblock>
-                    <div *ngIf="r.type === 'photo'">
-                      <p>{{ r.files }}</p>
-                      <img src="{{ r.files }}" alt="image" />
-                    </div>
-                  </ng-template>
+                  <ng-container *ngIf="r.type === 'video'">
+                    <video width="320" height="240" controls>
+                      <source src="{{ r.files }}" type="video/mp4" />
+                    </video>
+                  </ng-container>
+                  <ng-container *ngIf="r.type === 'photo'">
+                    <img src="{{ r.files }}" alt="image" />
+                  </ng-container>
                 </div>
               </div>
               <form [formGroup]="uploadform">
-                <div class="row">
+                <div class="row mt-3">
                   <div class="col-sm-3">
-                    <button type="submit" class="btn" >
-                     
-                      <i class="bi bi-hand-thumbs-up"  formControlName="like" (click)="like('1')"></i>
-                    </button>
+                    <button type="button" class="btn"><i class="bi bi-hand-thumbs-up"
+                      (click)="like(r)"
+                    ></i></button>
+                    
                   </div>
                   <div class="col-sm-5">
                     <div class="form-floating">
@@ -43,7 +35,7 @@
                         class="form-control"
                         placeholder="write a comment here"
                         id="floatingTextarea"
-                        formControlName="Comments"
+                        formControlName="comments"
                       ></textarea>
                       <label for="floatingTextarea">Comments</label>
                     </div>

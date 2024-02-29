@@ -11,26 +11,11 @@
                   <p>
                     video/photoname:<span>{{ r.title }}</span>
                   </p>
+                  <p>id:<span>{{r._id}}</span></p>
 
-                  <ng-container *ngIf="r.type === 'video'" ; else photoblock>
-                  </ng-container>
-
-                  <div>
-                    <p>{{ r.files }}</p>
-                    <video width="320" height="240" controls>
-                      <source src="{{ r.files }}" type="video/mp4" />
-                    </video>
-                  </div>
-
-                  <ng-template #photoblock>
-                    <div *ngIf="r.type === 'photo'">
-                      <p>{{ r.files }}</p>
-                      <img src="{{ r.files }}" alt="image" />
-                    </div>
-                  </ng-template>
-
-                  <p>like:</p>
-                  <p>comments:</p>
+                  
+                  <p>like:<span>{{r.like}}</span></p>
+                  <p>comments:{{r.commentsdetails[0]?.comments}}</p>
                 </div>
               </div>
             </div>

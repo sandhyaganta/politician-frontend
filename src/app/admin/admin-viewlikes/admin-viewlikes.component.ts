@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { UserServiceService } from '../../user-service.service';
 import { AdminServiceService } from '../../admin-service.service';
 import { FormBuilder } from '@angular/forms';
+import { log } from 'console';
 
 @Component({
   selector: 'app-admin-viewlikes',
@@ -13,13 +14,16 @@ import { FormBuilder } from '@angular/forms';
 })
 export class AdminViewlikesComponent {
   posts:any
+  data:any
+  allcomments: any = [];
   constructor(private api:UserServiceService,private service:AdminServiceService,private form:FormBuilder){}
   ngOnInit():void{
-    this.api.getallpost().subscribe((res: any) => {
+    this.api.getcomment().subscribe((res: any) => {
       console.log(res, 'posts');
       this.posts = res;
       console.log('posts', this.posts);
     });
+    
   }
 
 }
