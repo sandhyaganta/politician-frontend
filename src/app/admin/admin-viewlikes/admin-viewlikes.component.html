@@ -15,7 +15,8 @@
 
                   
                   <p>like:<span>{{r.like}}</span></p>
-                  <p>comments:{{r.commentsdetails[0]?.comments}}</p>
+                  <label for="">Comments</label>
+                  <p *ngFor="let c of r.commentsdetails"><span>{{c.comments}}</span></p>
                 </div>
               </div>
             </div>

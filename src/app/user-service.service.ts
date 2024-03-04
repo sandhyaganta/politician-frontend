@@ -42,32 +42,32 @@ export class UserServiceService {
     return this.http.delete('http://localhost:6010/user/deleteById/'+id,this.jwttoken())
   }
   getallpost(){
-    return this.http.get('http://localhost:6010/post/get/posts')
+    return this.http.get('http://localhost:6010/post/get/posts',this.jwttoken())
   }
   userpost(data:any){
-    return this.http.post("http://localhost:6010/userpost/comment",data)
+    return this.http.post("http://localhost:6010/userpost/comment",data,this.jwttoken())
   }
   userlike(data:any){
-    return this.http.post("http://localhost:6010/userlike/like",data)
+    return this.http.post("http://localhost:6010/userlike/like",data,this.jwttoken())
 
   }
   getlike(){
-    return this.http.get("http://localhost:6010/userlike/getlike")
+    return this.http.get("http://localhost:6010/userlike/getlike",this.jwttoken())
   }
   likeupdate(data:any){
-    return this.http.put("http://localhost:6010/userlike/updateById/"+data.id,data)
+    return this.http.put("http://localhost:6010/userlike/updateById/"+data.id,data,this.jwttoken())
   }
   usercomplients(data:any){
     return this.http.post("http://localhost:6010/complients/creatcomplients",data)
   }
-  getcomplients(id:any){
-    return this.http.get("http://localhost:6010/complients/getById/"+id)
+  getcomplients(){
+    return this.http.get("http://localhost:6010/complients/getcomplients",this.jwttoken())
   }
   comments(data:any){
     return this.http.post("http://localhost:6010/comments/comment",data)
   }
   getcomment(){
-    return this.http.get("http://localhost:6010/comments/get/comments",)
+    return this.http.get("http://localhost:6010/comments/get/comments",this.jwttoken())
   }
 
   

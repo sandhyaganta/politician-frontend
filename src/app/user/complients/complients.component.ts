@@ -14,30 +14,39 @@ import { CommonModule } from '@angular/common';
 export class ComplientsComponent {
   Registrationform!:FormGroup
   data:any
+  uid:any
+  
   constructor(private api:UserServiceService,private service:AdminServiceService,private form:FormBuilder){}
   ngOnInit():void{
-    let uid=localStorage.getItem("id")
-    let uname=localStorage.getItem("username")
-    let village=localStorage.getItem("village")
-    let mandal=localStorage.getItem("mandal")
-    let district=localStorage.getItem("district")
+    this.uid=localStorage.getItem("id");
+    
+ console.log("uuuuu",this.uid)
+
+   
+    
     this.Registrationform=this.form.group({
       date:[''],
     complients:[''],
-    username:uname,
-    village:village,
-    mandal:mandal,
-    district:district,
-    id:uid,
+    userid:['']
+   
     })
+
+    
     
   }
 
 
-  complients(){
-    this.api.usercomplients(this.Registrationform.value).subscribe((res:any) => {
-      this.data=res
-      console.log("complients",this.data)
+  complient(){
+    let cc={
+      date:this.Registrationform.value.date,
+      userid:this.uid,
+      complients:this.Registrationform.value.complients
+
+    }
+    console.log(cc);
+    
+    this.api.usercomplients(cc).subscribe((res:any) => {
+      console.log("complients",res)
     })
     
 

@@ -23,19 +23,19 @@ export class AdminServiceService {
     return this.http.post('http://localhost:6010/admin/login',data);
   }
   adminpost(data:any){
-    return this.http.post('http://localhost:6010/post/video',data);
+    return this.http.post('http://localhost:6010/post/video',data,this.jwttoken());
 
   }
   getallpost(){
-    return this.http.get('http://localhost:6010/userpost/get/posts')
+    return this.http.get('http://localhost:6010/userpost/get/posts',this.jwttoken())
   }
   postupdate(data:any){
-    return this.http.put('http://localhost:6010/post/updateById/'+data.id,data)
+    return this.http.put('http://localhost:6010/post/updateById/'+data.id,data,this.jwttoken())
   }
   adminreplay(data:any){
     return this.http.post("http://localhost:6010/replay/creatreplay",data)
   }
-  getreplay(id:any){
-    return this.http.get("http://localhost:6010/replay/getById/"+id)
+  getreplay(u:any){
+    return this.http.get("http://localhost:6010/replay/getreplay/"+u,this.jwttoken())
   }
 }

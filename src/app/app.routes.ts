@@ -18,6 +18,7 @@ import { AdminViewuserComponent } from './admin/admin-viewuser/admin-viewuser.co
 import { AdminPostComponent } from './admin/admin-post/admin-post.component';
 import { AdminViewcomplientsComponent } from './admin/admin-viewcomplients/admin-viewcomplients.component';
 import { AdminViewlikesComponent } from './admin/admin-viewlikes/admin-viewlikes.component';
+import { ReplayComponent } from './user/replay/replay.component';
 
 export const routes: Routes = [
     {path:"",component:MainpageComponent},
@@ -43,7 +44,8 @@ export const routes: Routes = [
         {path:"home1",component:Home1Component},
         {path:"profile",component:ViewProfileComponent},
         {path:"viewpost",component:ViewPostComponent},
-        {path:"complients",component:ComplientsComponent}
+        {path:"complients",component:ComplientsComponent},
+        {path:"replay",component:ReplayComponent}
     ]}
     
     

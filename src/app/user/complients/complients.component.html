@@ -1,54 +1,36 @@
 <div class="container-fluid">
     <div class="row">
-        <div class="col-sm-3"></div>
-        <div class="col-sm-6">
-            <div class="card">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+            <div class="card ">
                 <div class="card-body">
                     <div class="container">
                         <form [formGroup]="Registrationform">
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="form-floating mb-3">
-                                        <input type="text" class="form-control" id="floatingInput" placeholder="username" formControlName="username">
-                                        <label for="floatingInput">username</label>
+                                        <input type="date" class="form-control" id="floatingInput" placeholder="date" formControlName="date">
+                                        <label for="floatingInput">Date</label>
                                       </div>
-                                      <div class="form-floating mb-3">
-                                        <input type="text" class="form-control" id="floatingInput" placeholder="village" formControlName="village">
-                                        <label for="floatingInput">village</label>
-                                      </div>
-
                                       <div class="form-floating">
                                         <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px" formControlName="complients"></textarea>
                                         <label for="floatingTextarea2">Complients</label>
                                       </div>
 
                                 </div>
-                                <div class="col-sm-6">
-                                    <div class="form-floating mb-3">
-                                        <input type="date" class="form-control" id="floatingInput" placeholder="date" formControlName="date">
-                                        <label for="floatingInput">Date</label>
-                                      </div>
-                                      <div class="form-floating mb-3">
-                                        <input type="text" class="form-control" id="floatingInput" placeholder="mandal" formControlName="mandal">
-                                        <label for="floatingInput">mandal</label>
-                                      </div>
-                                      <div class="form-floating mb-3">
-                                        <input type="text" class="form-control" id="floatingInput" placeholder="district" formControlName="district">
-                                        <label for="floatingInput">district</label>
-                                      </div>
-
-                                </div>
+                               
                             </div>
                             <div class="text-center mt-3">
-                                <button class="btn btn-primary  " type="submit" (click)="complients()">submit</button>
+                                <button class="btn btn-primary  " type="submit" (click)="complient()">submit</button>
                             </div>
                             
                             
                         </form>
+                       
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-sm-3"></div>
+        <div class="col-sm-4"></div>
     </div>
 </div>
