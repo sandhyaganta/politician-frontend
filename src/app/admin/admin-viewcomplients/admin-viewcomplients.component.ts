@@ -34,12 +34,19 @@ export class AdminViewcomplientsComponent {
       console.log("allcomplients",this.cid);
       
     })
+
+    // this.service.getreplay().subscribe((res:any) => {
+    //   this.replay=res
+    // })
+
+
   }
 
   replay(r:any){
     let rr={
       complientid:r._id,
       replay:this.Replayform.value.replay,
+      role:'admin',
       date:this.Replayform.value.date,
 
     }

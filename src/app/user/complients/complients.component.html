@@ -1,7 +1,35 @@
 <div class="container-fluid">
     <div class="row">
-        <div class="col-sm-4"></div>
-        <div class="col-sm-4">
+        <div class="col-sm-3">
+            
+            <div class="card fw-bold">
+                <div class="card-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <label>Complients</label>
+                                <div *ngFor="let c of allcomplient">
+                                    <!-- <p class="pp" routerLink="/replay" >{{c.complients }}</p> -->
+                                    <a class="" (click)="replies(c._id)" >{{c.complients}}---{{c._id}}</a>
+
+                                </div>
+                                
+
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="col-sm-6">
+           <p class="text-light">{{data|json}}</p> 
+            
+            <router-outlet></router-outlet>
+           
+        </div>
+        <div class="col-sm-3">
             <div class="card ">
                 <div class="card-body">
                     <div class="container">
@@ -30,7 +58,7 @@
                     </div>
                 </div>
             </div>
+
         </div>
-        <div class="col-sm-4"></div>
     </div>
 </div>

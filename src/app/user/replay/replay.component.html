@@ -1,22 +1,65 @@
 <div class="container-fluid">
-    <div class="row">
-        <div class="col-sm-4"></div>
-        <div class="col-sm-4">
-            <div >
-                <div class="card">
-                    <div class="card-body">
-                        <div class="container fw-bold">
-                            <div class="row " *ngFor="let c of data" >
-                                <div class="col-sm-8">
-                                    <p>complients:<span class="com">{{c.usercomplients[0]?.complients}}</span></p>
-                                    <p>Replay:<span class="re">{{c.replay}}</span></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <div *ngFor="let c of data">
+        <div class="card fw-bold">
+          <div class="card-body">
+            <div class="container">
+              <div class="row">
+                <div class="col-sm-">
+                  <p>
+                    Complients:<span class="com">{{
+                      c.usercomplients[0]?.complients
+                    }}</span>
+                  </p>
+                  <p>
+                    Replay:<span class="re">{{ c.replay }}</span>
+                  </p>
+
                 </div>
+                
+              </div>
+              <div class="row mt-3">
+                <form [formGroup]="Replayform">
+                  <div class="col-sm-6">
+                    <div class="form-floating mb-3">
+                      <input
+                        type="date"
+                        class="form-control"
+                        id="floatingInput"
+                        placeholder="date"
+                        formControlName="date"
+                      />
+                      <label for="floatingInput">Date</label>
+                    </div>
+                    <div class="form-floating">
+                      <textarea
+                        class="form-control"
+                        placeholder="Leave a comment here"
+                        id="floatingTextarea2"
+                        style="height: 100px"
+                        formControlName="replay"
+                      ></textarea>
+                      <label for="floatingTextarea2">Replay</label>
+                    </div>
+                    <div class="text-center mt-3">
+                      <button
+                        class="btn btn-primary"
+                        type="submit"
+                        (click)="userreplay(c)"
+                      >
+                        submit
+                      </button>
+                    </div>
+                  </div>
+                </form>
+
+                
+              </div>
             </div>
+          </div>
         </div>
-        <div class="col-sm-4"></div>
+      </div>
     </div>
+  </div>
 </div>

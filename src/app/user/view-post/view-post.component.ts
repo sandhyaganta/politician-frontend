@@ -46,6 +46,14 @@ export class ViewPostComponent {
       console.log('posts', this.posts);
     });
 
+
+    this.api.getcomment().subscribe((res: any) => {
+      console.log(res, 'posts');
+      this.posts = res;
+      console.log('posts', this.posts);
+      
+    });
+
     // this.api.getallpost().subscribe((res: any) => {
     //   console.log(res, 'like');
     //   this.likes = res;

@@ -19,8 +19,11 @@ import { log } from 'console';
 })
 export class AdminPostComponent {
   uploadform!: FormGroup;
+  textForm!:FormGroup;
   selectedFile!: File;
   post: any;
+  data:any
+  description:any
   constructor(private form: FormBuilder, private api: AdminServiceService) {}
   ngOnInit(): void {
     this.uploadform = this.form.group({
@@ -30,6 +33,14 @@ export class AdminPostComponent {
       like:0,
       comments:[''],
       
+    });
+    this.textForm=this.form.group({
+      // messages: Message[] = [];
+      // newMessage: string = '';
+      mobileno: [],
+      description:['']
+
+
     });
 
     // this.api.getallpost().subscribe((res: any) => {
@@ -58,4 +69,35 @@ export class AdminPostComponent {
       console.log('admincheck', res);
     });
   }
-}
+
+
+  whatsup(){
+      
+      
+      // if(this.description.trim === '')
+      // {
+        this.api.whasupmessage(this.textForm.value).subscribe((res:any)=>{
+          this.data=res
+          .console.log("res",this.data);
+          
+          // this.description = '' ;
+
+
+        })
+
+    // }
+    
+
+  }
+  
+
+    
+
+  }
+
+// if (this.newMessage.trim() === '') return; // Don't send empty messages
+//     this.chatService.sendMessage(this.newMessage)
+//       .subscribe(() => {
+//         this.newMessage = ''; // Clear the input field after sending message
+//         this.getMessages(); // Refresh messages after sending
+//       });

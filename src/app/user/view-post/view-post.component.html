@@ -26,7 +26,7 @@
                   <div class="col-sm-3">
                     <button type="button" class="btn"><i class="bi bi-hand-thumbs-up"
                       (click)="like(r)"
-                    ></i></button>
+                    ></i></button><span *ngFor="let r of posts">{{r.like}}</span>
                     
                   </div>
                   <div class="col-sm-5">
@@ -51,6 +51,16 @@
                   </div>
                 </div>
               </form>
+              <div class="row mt-4" >
+                <div class="col-sm-4"></div>
+                <div class="col-sm-6">
+                  <div>
+                    <p *ngFor="let c of r.commentsdetails"><span class="ss">{{c.comments}}</span></p>
+                  </div>
+
+                </div>
+                <div class="col-sm-2"></div>
+              </div>
             </div>
           </div>
         </div>

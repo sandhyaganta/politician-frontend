@@ -69,6 +69,12 @@ export class UserServiceService {
   getcomment(){
     return this.http.get("http://localhost:6010/comments/get/comments",this.jwttoken())
   }
+  getcomplient(){
+    return this.http.get("http://localhost:6010/complients/getcomplient")
+  }
+  getbycomplient(id:any){
+    return this.http.get("http://localhost:6010/complients/getById/"+id)
+  }
 
   
 }
