@@ -75,6 +75,9 @@ export class UserServiceService {
   getbycomplient(id:any){
     return this.http.get("http://localhost:6010/complients/getById/"+id)
   }
+  forgotpassword(data:any){
+    return this.http.post('http://localhost:6010/reset-password',data)
+  }
 
   
 }

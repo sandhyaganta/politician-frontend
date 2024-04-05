@@ -13,12 +13,21 @@ import { UserServiceService } from '../../user-service.service';
 })
 export class UserLoginComponent {
   Loginform!:FormGroup;
+  Updateform!:FormGroup;
   users:any
+  pwt:any
   constructor(private form:FormBuilder,private api:UserServiceService,private router:Router){}
   ngOnInit():void{
     this.Loginform=new FormGroup({
       username: new FormControl('',[Validators.required,Validators.minLength(3)]),
-      password: new FormControl('',[Validators.required,Validators.minLength(3)])
+      password: new FormControl('',[Validators.required,Validators.minLength(3)]),
+      
+
+    })
+
+    this.Updateform=this.form.group({
+      password: [''],
+      confirmpassword: ['']
 
     })
     
@@ -38,10 +47,6 @@ export class UserLoginComponent {
       console.log(res.users._id);
       localStorage.setItem("token",res.token)
       localStorage.setItem("id",res.users._id)
-      localStorage.setItem("username",res.username)
-      localStorage.setItem("village",res.village)
-      localStorage.setItem("mandal",res.mandal)
-      localStorage.setItem("district",res.district)
       if(res){
         alert("login successfuly")
         this.router.navigate(['/dash1'])
@@ -50,8 +55,21 @@ export class UserLoginComponent {
       else{
         alert("login failed")
 
+
       }
     })
   }
-   
+
+
+
+  changepassword(){
+    this.api.forgotpassword(this.Updateform.value).subscribe((res:any)=>{
+      this.pwt=res
+
+    })
+
+  }
+
+  
+ 
 }

@@ -2,14 +2,22 @@
     color:red;
 }
 .sh{
-    color:rgb(245,87,87)
+    color: #eb1773
 }
 .ssh{
-    color:brown
+    color:rgb(245, 7, 46);
 }
 .btn{
     background-color:rgb(245,87,87) ;
     color: white;
     float: right;
     
+}
+.pp{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 17px;
+}
+.hr{
+    background-color: black; /* Set the color of the line */
+    font-weight:bold;
 }
