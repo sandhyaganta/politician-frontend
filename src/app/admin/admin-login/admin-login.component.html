@@ -1,8 +1,43 @@
 <div class="container-fluid con">
+  <div class="row sticky-top con">
+    <div class="d-flex">
+      <div class="col-sm-2">
+        <img
+          class="rounded-circle"
+          width="95"
+          height="105"
+          src="assets/logo.png"
+        />
+      </div>
+      <div class="col-sm-8">
+        <h1 class="text-center mt-3 p-2 rr fw-bold">BHARAT RASHTRA SAMITHI</h1>
+      </div>
+      <div class="col-sm-2">
+        <img
+          class="rounded-circle"
+          width="95"
+          height="100"
+          src="assets/kcrrr.jfif"
+        />
+        <img
+          class="rounded-circle"
+          width="95"
+          height="105"
+          src="assets/ktr.jfif"
+        />
+      </div>
+    </div>
+  </div>
+
   <div class="row">
-    <div class="col-sm-8"></div>
-    <div class="col-sm-4 m-auto">
-      <div class="card border-0 rounded car mt-3">
+    <h1 class="text-center head p-4 fw-bold">Ganta RamuluYadhav</h1>
+  </div>
+  <div class="row">
+    <div class="col-sm-7">
+      <img class="rounded" width="650" height="420" src="assets\p2.jfif" />
+    </div>
+    <div class="col-sm-5">
+      <div class="card border-0 rounded car">
         <div class="card-body">
           <div class="container fw-bold">
             <form [formGroup]="Loginform">
@@ -16,26 +51,24 @@
                     ></span>
                     <input
                       type="text"
-                      
                       class="form-control rounded-end-pill"
-                      placeholder="Usernamee"
+                      placeholder="Username"
                       aria-label="Username"
                       aria-describedby="basic-addon1"
                       formControlName="username"
                     />
-                   
-                    <div>
-                      <small
-                        class="text-danger"
-                        *ngIf="Username.errors?.['required'] && (Username.dirty || Username.touched)"
-                        >Username is required</small
-                      >
-                      <small
-                        class="text-danger"
-                        *ngIf="Username.errors?.['minlength'] && (Username.dirty || Username.touched)"
-                        >Username is too short</small
-                      >
-                    </div>
+                  </div>
+                  <div>
+                    <small
+                      class="text-danger"
+                      *ngIf="Username.errors?.['required'] && (Username.dirty || Username.touched)"
+                      >Username is required</small
+                    >
+                    <small
+                      class="text-danger"
+                      *ngIf="Username.errors?.['minlength'] && (Username.dirty || Username.touched)"
+                      >Username is too short</small
+                    >
                   </div>
                   <div class="input-group mb-3">
                     <span
@@ -44,7 +77,6 @@
                       ><i class="bi bi-lock-fill"></i
                     ></span>
                     <input
-                      
                       type="password"
                       class="form-control rounded-end-pill"
                       placeholder="password"
@@ -52,10 +84,18 @@
                       aria-describedby="basic-addon1"
                       formControlName="password"
                     />
-                    <div >
-                      <small class="text-danger" *ngIf="password.errors?.['required'] && (password.dirty || password.touched)">password is required</small>
-                      <small class="text-danger" *ngIf="password.errors?.['minlength'] && (password.dirty || password.touched)">password is too</small>
-                    </div>
+                  </div>
+                  <div>
+                    <small
+                      class="text-danger"
+                      *ngIf="password.errors?.['required'] && (password.dirty || password.touched)"
+                      >password is required</small
+                    >
+                    <small
+                      class="text-danger"
+                      *ngIf="password.errors?.['minlength'] && (password.dirty || password.touched)"
+                      >password is too</small
+                    >
                   </div>
                   <div class="text-center">
                     <button
@@ -75,4 +115,56 @@
       </div>
     </div>
   </div>
+  <div class="row mt-3">
+    <div class="col-sm-4">
+      <div class="card border-0 rounded">
+        <div class="card-body">
+          <h2 class="head">గోదావరి పరివాహకంలో యాసంగి రైతులకు నీళ్లిస్తరా? ఇయ్యరా?</h2>
+          <h4>వానకాలం ధాన్యం సొమ్మును బోనస్‌తో కలిపి ఇవ్వాలి
+            -మిర్చి రైతులకు సర్కారు తక్షణమే న్యాయం చేయాలి
+            -రైతుబంధుపై మంత్రులది తలోమాట</h4>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="card border-0 rounded">
+        <div class="card-body">
+          <h2 class="head p-3">పథకాలు ఆపితే నిలదీస్తం</h2>
+          <h4>పథకాలు ఆపితే నిలదీస్తం.. ప్రజా సంక్షేమాన్ని సమాధిచేసేలా కాంగ్రెస్‌ సర్కార్‌ కుట్రలు
+
+            -దళితబంధు లబ్ధిదారుల అకౌంట్లు ఫ్రీజ్‌
+            -గృహలక్ష్మి పథకం అన్యాయంగా రద్దు
+            -పేదలు, దళితులు, వెనుకబడిన వర్గాలు, మైనార్టీలకు అండగా నిలుస్తాం
+            </h4>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="card border-0 rounded ">
+        <div class="card-body">
+          <h2 class="head p-3">కాంగ్రెస్‌ పాలనలో యూరియా కొరత</h2>
+          <h4>ప్రజలను మోసం చేయొద్దు
+            -హామీలన్నీ అమలుచేయాలి
+            -మేము గెలిచినా,ఓడినా ప్రజాపక్షమే
+            -గృహలక్ష్మి లబ్ధిదారులను ‘ఇందిరమ్మ’ పథకంలో చేర్చాలి</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row r1 mt-2">
+    <div class="col-sm-4">
+        <img class="rounded mt-3" width="155" height="140" src="assets/image.jfif">
+    </div>
+    <div class="col-sm-4">
+        <p class="mt-5">iamramuluganta gmail.com</p>
+        <p>9849771866</p>
+         </div>
+    <div class="col-sm-4">
+        <p>Address</p>
+        <p>H.no</p>
+        <p>vil:Haripuram</p>
+        <p>Mandl:Kolanuru</p>
+        <p>District:peddapali</p>
+    </div>
+</div>
 </div>

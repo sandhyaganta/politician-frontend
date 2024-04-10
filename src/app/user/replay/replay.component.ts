@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { unzip } from 'zlib';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { CommonService } from '../../services/common.service';
 
 @Component({
   selector: 'app-replay',
@@ -19,16 +20,25 @@ export class ReplayComponent implements OnInit{
   ss:any
   cid: any;
   
-  constructor(private api:UserServiceService,private service:AdminServiceService,private form:FormBuilder,private route: ActivatedRoute){}
+  constructor(private api:UserServiceService,private service:AdminServiceService,private form:FormBuilder,private route: ActivatedRoute,private common: CommonService){
+    this.getReplays();
+  }
   ngOnInit(): void {
-    this.route.params.subscribe(paramss => {
-      this.cid = paramss['id']
-   });
-   console.log("cidcidcidcid",this.cid)
-
     const u=localStorage.getItem("id");
     
     console.log("userid",u)
+
+this.getReplays();
+    this.Replayform=this.form.group({
+      replay:[''],
+      date:['']
+
+    })
+   
+  }
+  getReplays(){
+    this.cid = this.common.getComplient();
+    console.log("cidcidcidcid",this.cid)
 
 
     this.service.getreplay(this.cid).subscribe((res:any) =>{
@@ -37,14 +47,6 @@ export class ReplayComponent implements OnInit{
       
       
     })
-
-
-    this.Replayform=this.form.group({
-      replay:[''],
-      date:['']
-
-    })
-   
   }
 
   userreplay(c:any){

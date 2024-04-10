@@ -1,8 +1,12 @@
-.con{
+/* .con{
     background: url("../../../assets/photos/userlog.jfif");
     background-repeat: no-repeat;
     background-size: cover;
     height: 670px;
+} */
+.con{
+    background-color:#f9fafc;
+    /* height: 590px; */
 }
 .reg{
     color: palevioletred;

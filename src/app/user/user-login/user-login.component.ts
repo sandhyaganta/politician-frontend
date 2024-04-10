@@ -62,11 +62,11 @@ export class UserLoginComponent {
 
 
 
-  changepassword(){
-    this.api.forgotpassword(this.Updateform.value).subscribe((res:any)=>{
+   changepassword(){
+     this.api.forgotpassword(this.Updateform.value).subscribe((res:any)=>{
       this.pwt=res
 
-    })
+     })
 
   }
 

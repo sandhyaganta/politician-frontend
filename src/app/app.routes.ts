@@ -55,11 +55,9 @@ export const routes: Routes = [
       { path: 'home1', component: Home1Component },
       { path: 'profile', component: ViewProfileComponent },
       { path: 'viewpost', component: ViewPostComponent },
-      {
-        path: 'complients',
-        component: ComplientsComponent,
-        children: [{ path: 'replay/:id', component: ReplayComponent }],
-      },
+      { path: 'complients',component: ComplientsComponent},
+        { path: 'replay', component: ReplayComponent },
+      
     ],
   },
 ];

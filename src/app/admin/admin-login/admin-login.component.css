@@ -1,11 +1,28 @@
-.car{
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+.car {
+  margin-top: 95px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-.con{
+.head {
+  background-color: #f84996;
+  color: white;
+}
+.rr {
+  color: #f84996;
+}
+
+.con {
+  background-color: #f9fafc;
+}
+.r1{
+  background-color: black;
+  color: white;
+}
+
+/* .con{
     background: url("../../../assets/photos/loginpage.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
     height: 670px;
     
    
-}
+} */

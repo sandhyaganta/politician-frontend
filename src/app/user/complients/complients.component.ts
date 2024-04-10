@@ -9,6 +9,7 @@ import {
 } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Router, RouterLink, RouterOutlet } from '@angular/router';
+import { CommonService } from '../../services/common.service';
 
 @Component({
   selector: 'app-complients',
@@ -34,7 +35,8 @@ export class ComplientsComponent {
     private api: UserServiceService,
     private service: AdminServiceService,
     private form: FormBuilder,
-    private router:Router 
+    private router:Router,
+    private common: CommonService
   ) {}
   ngOnInit(): void {
     this.uid = localStorage.getItem('id');
@@ -71,17 +73,7 @@ export class ComplientsComponent {
 
   replies(id:any) {
     console.log("id",id);
-    this.router.navigate(["/dash1/complients/replay",id])
-
-    // this.api.getbycomplient(id).subscribe((res:any) =>{
-    //   this.data=res
-    //   console.log("res",this.data);
-    //   // this.router.navigate(["/dash1/complients/replay"])
-      
-
-
-    // });
-    
-    
+    this.common.setComplient(id);
+    this.router.navigate(['dash1/replay'])
   }
 }
