@@ -55,7 +55,10 @@ export class AdminLoginComponent {
     this.api.adminLogin(this.Loginform.value).subscribe((res: any) => {
       console.log('res', res);
       console.log(res.token);
+      console.log("id",res.admins._id);
+      
       localStorage.setItem('token', res.token);
+      localStorage.setItem("id",res.admins._id)
 
       if (res) {
         alert('login succesfuly');

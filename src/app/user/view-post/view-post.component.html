@@ -2,34 +2,33 @@
   <div class="row">
     <div class="col-sm-2"></div>
     <div class="col-sm-8">
-      <div *ngFor="let r of posts">
+      <div *ngFor="let r of notification">
         <div class="card mb-2">
+          <div class="card-header">
+            <p>
+              <span>{{ r.title }}</span>
+            </p>
+          </div>
           <div class="card-body">
             <div class="container fw-bold">
               <div class="row">
-                <div class="col-sm-6">
-                  <p>
-                    <span>{{ r.title }}</span>
-                  </p>
-                  <ng-container *ngIf="r.type === 'video'">
+                <div class="col-sm-4">
+                  <ng-container *ngIf="r.filetype === 'video'">
                     <video width="320" height="240" controls>
-                      <source src="{{ r.files }}" type="video/mp4" />
+                      <source src="{{ r.filepath }}" type="video/mp4" />
                     </video>
                   </ng-container>
-                  <ng-container *ngIf="r.type === 'photo'">
-                    <img src="{{ r.files }}" alt="image" />
+                  <ng-container *ngIf="r.filetype === 'photo'">
+                    <img src="{{ r.filepath }}" alt="image" />
                   </ng-container>
+                  <br />
+                  <button type="button" class="btn">
+                    <i class="bi bi-hand-thumbs-up" (click)="like(r)"></i>
+                    <span>{{ r.like }}</span>
+                  </button>
                 </div>
-              </div>
-              <form [formGroup]="uploadform">
-                <div class="row mt-3">
-                  <div class="col-sm-3">
-                    <button type="button" class="btn"><i class="bi bi-hand-thumbs-up"
-                      (click)="like(r)"
-                    ></i></button><span *ngFor="let r of posts">{{r.like}}</span>
-                    
-                  </div>
-                  <div class="col-sm-5">
+                <div class="col-sm-4">
+                  <form [formGroup]="uploadform">
                     <div class="form-floating">
                       <textarea
                         class="form-control"
@@ -39,27 +38,25 @@
                       ></textarea>
                       <label for="floatingTextarea">Comments</label>
                     </div>
-                  </div>
-                  <div class="text-center mt-3">
-                    <button
-                      class="btn btn-primary"
-                      type="submit"
-                      (click)="comment()"
-                    >
-                      submit
-                    </button>
-                  </div>
-                </div>
-              </form>
-              <div class="row mt-4" >
-                <div class="col-sm-4"></div>
-                <div class="col-sm-6">
-                  <div>
-                    <p *ngFor="let c of r.commentsdetails"><span class="ss">{{c.comments}}</span></p>
-                  </div>
 
+                    <div class="text-center mt-3">
+                      <button
+                        class="btn btn-primary"
+                        type="submit"
+                        (click)="comment(r)"
+                      >
+                        submit
+                      </button>
+                    </div>
+                  </form>
                 </div>
-                <div class="col-sm-2"></div>
+                <div class="col-sm-4">
+                  <div>
+                    <p *ngFor="let c of r.notifications">
+                      <span class="ss">{{ c.comments }}</span>
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

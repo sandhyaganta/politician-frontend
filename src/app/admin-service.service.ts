@@ -21,29 +21,27 @@ export class AdminServiceService {
 
   constructor(private http:HttpClient) { }
   adminCreate(data:any){
-    return this.http.post('http://localhost:6010/admin/create',data);
+    return this.http.post('http://localhost:6010/admin',data);
 
   }
   adminLogin(data:any){
     return this.http.post('http://localhost:6010/admin/login',data);
   }
   adminpost(data:any){
-    return this.http.post('http://localhost:6010/post/video',data,this.jwttoken());
+    return this.http.post('http://localhost:6010/admin/notification/',data,this.jwttoken());
 
   }
   getallpost(){
-    return this.http.get('http://localhost:6010/userpost/get/posts',this.jwttoken())
+    return this.http.get('http://localhost:6010/admin/notification/',this.jwttoken())
   }
   postupdate(data:any){
-    return this.http.put('http://localhost:6010/post/updateById/'+data.id,data,this.jwttoken())
+    return this.http.put('http://localhost:6010/admin/notification/'+data.id,data,this.jwttoken())
   }
   adminreplay(data:any){
-    return this.http.post("http://localhost:6010/replay/creatreplay",data)
+    return this.http.post("http://localhost:6010/admin/complients/",data)
   }
-  getreplay(u:any){
-    console.log(u,'ccccccccccccid');
-    
-    return this.http.get("http://localhost:6010/replay/getreplay/"+u,this.jwttoken())
+  getreplay(comId:any){
+    return this.http.get("http://localhost:6010/user/complients/all/"+comId,this.jwttoken())
   }
   whasupmessage(data:any){
   return this.http.post("https://app-server.wati.io/api/v1/sendTemplateMessage?whatsappNumber=9701148414",data,this.Token())

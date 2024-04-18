@@ -1,61 +1,66 @@
 <div class="container-fluid">
-    <div class="row">
-        <div class="col-sm-2"></div>
-        <div class="col-sm-4">
-            
-            <div class="card fw-bold">
-                <div class="card-body">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <label>Complients</label>
-                                <div *ngFor="let c of allcomplient">
-                                    <!-- <p class="pp" routerLink="/replay" >{{c.complients }}</p> -->
-                                    <a class="com" (click)="replies(c._id)" >{{c.complients}}</a>
-
-                                </div>
-                                
-
-                                
-                            </div>
-                        </div>
-                    </div>
+  <div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-4">
+      <div class="card fw-bold">
+        <div class="card-body">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-6">
+                <label>Complients</label>
+                <div *ngFor="let c of allcomplient">
+                  <p class="com" (click)="replies(c._id)">{{ c.complient }}</p>
                 </div>
+              </div>
             </div>
-            
+          </div>
         </div>
-        
-        <div class="col-sm-5">
-            <div class="card ">
-                <div class="card-body">
-                    <div class="container">
-                        <form [formGroup]="Registrationform">
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <div class="form-floating mb-3">
-                                        <input type="date" class="form-control" id="floatingInput" placeholder="date" formControlName="date">
-                                        <label for="floatingInput">Date</label>
-                                      </div>
-                                      <div class="form-floating">
-                                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px" formControlName="complients"></textarea>
-                                        <label for="floatingTextarea2">Complients</label>
-                                      </div>
-
-                                </div>
-                               
-                            </div>
-                            <div class="text-center mt-3">
-                                <button class="btn btn-primary  " type="submit" (click)="complient()">submit</button>
-                            </div>
-                            
-                            
-                        </form>
-                       
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        <div class="col-sm-1"></div>
+      </div>
     </div>
+
+    <div class="col-sm-5">
+      <div class="card">
+        <div class="card-body">
+          <div class="container">
+            <form [formGroup]="Registrationform">
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-floating mb-3">
+                    <input
+                      type="date"
+                      class="form-control"
+                      id="floatingInput"
+                      placeholder="date"
+                      formControlName="date"
+                    />
+                    <label for="floatingInput">Date</label>
+                  </div>
+                  <div class="form-floating">
+                    <textarea
+                      class="form-control"
+                      placeholder="Leave a comment here"
+                      id="floatingTextarea2"
+                      style="height: 100px"
+                      formControlName="complient"
+                    ></textarea>
+                    <label for="floatingTextarea2">Complients</label>
+                  </div>
+                </div>
+              </div>
+              <div class="text-center mt-3">
+                <button
+                  class="btn btn-primary"
+                  type="submit"
+                  (click)="complient()"
+                >
+                  submit
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-1"></div>
+  </div>
 </div>

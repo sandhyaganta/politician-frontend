@@ -20,7 +20,7 @@ export class UserServiceService {
   userCreate(data:any){
     console.log(data,'data1');
     
-    return this.http.post('http://localhost:6010/user/create',data);
+    return this.http.post('http://localhost:6010/user',data);
   }
 
   userLogin(data:any){
@@ -29,23 +29,23 @@ export class UserServiceService {
   getUser(id:any){
     console.log(id,'id');
     
-    return this.http.get('http://localhost:6010/user/getById/'+id,this.jwttoken());
+    return this.http.get('http://localhost:6010/user/'+id,this.jwttoken());
   }
   userupdate(data:any){
-    return this.http.put('http://localhost:6010/user/updateById/'+data.id,data,this.jwttoken());
+    return this.http.put('http://localhost:6010/user/'+data.id,data,this.jwttoken());
   }
   getallusers(){
-    return this.http.get('http://localhost:6010/user/get/users',this.jwttoken());
+    return this.http.get('http://localhost:6010/user/',this.jwttoken());
 
   }
   userdelete(id:any){
-    return this.http.delete('http://localhost:6010/user/deleteById/'+id,this.jwttoken())
+    return this.http.delete('http://localhost:6010/user/'+id,this.jwttoken())
   }
   getallpost(){
-    return this.http.get('http://localhost:6010/post/get/posts',this.jwttoken())
+    return this.http.get('http://localhost:6010/user/notification/all',this.jwttoken())
   }
   userpost(data:any){
-    return this.http.post("http://localhost:6010/userpost/comment",data,this.jwttoken())
+    return this.http.post("http://localhost:6010/user/notification/",data,this.jwttoken())
   }
   userlike(data:any){
     return this.http.post("http://localhost:6010/userlike/like",data,this.jwttoken())
@@ -58,19 +58,19 @@ export class UserServiceService {
     return this.http.put("http://localhost:6010/userlike/updateById/"+data.id,data,this.jwttoken())
   }
   usercomplients(data:any){
-    return this.http.post("http://localhost:6010/complients/creatcomplients",data)
+    return this.http.post("http://localhost:6010/user/complients",data)
   }
   getcomplients(){
-    return this.http.get("http://localhost:6010/complients/getcomplients",this.jwttoken())
+    return this.http.get("http://localhost:6010/admin/complients/all",this.jwttoken())
   }
   comments(data:any){
-    return this.http.post("http://localhost:6010/comments/comment",data)
+    return this.http.post("http://localhost:6010/user/notification/",data)
   }
   getcomment(){
-    return this.http.get("http://localhost:6010/comments/get/comments",this.jwttoken())
+    return this.http.get("http://localhost:6010/user/notification/all",this.jwttoken())
   }
-  getcomplient(){
-    return this.http.get("http://localhost:6010/complients/getcomplient")
+  getcomplient(uid:any){
+    return this.http.get("http://localhost:6010/user/complients/"+uid)
   }
   getbycomplient(id:any){
     return this.http.get("http://localhost:6010/complients/getById/"+id)

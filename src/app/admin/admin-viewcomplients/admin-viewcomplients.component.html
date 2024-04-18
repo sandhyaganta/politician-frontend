@@ -7,21 +7,21 @@
           <div class="card-body">
             <div class="container fw-bold">
               <div class="row">
-                <div class="col-sm-8">
+                <div class="col-sm-7">
                   <label
                     >complients:
-                    <p class="pp">{{ r.complients }}</p></label
+                    <p class="pp" >{{ r.complient[0]?.complient }}</p></label
                   >
                   <p>{{r.replay}}</p>
                   <br />
                   <label
                     >Compliant By :
                     <p class="p1">
-                      {{ r.complientsdetails[0]?.fristname }}<br />{{
-                        r.complientsdetails[0]?.lastname
-                      }}<br />{{ r.complientsdetails[0]?.mobileno }}<br />{{
-                        r.complientsdetails[0]?.village
-                      }}<br />{{ r.complientsdetails[0]?.mandal }}
+                      {{ r.fristname }}<br />{{
+                        r.lastname
+                      }}<br />{{ r.mobileno }}<br />{{
+                        r.village
+                      }}<br />{{ r.mandal }}
                     </p></label
                   >
 
@@ -59,6 +59,9 @@
                       </div>
                     </form>
                   </div>
+                </div>
+                <div class="col-sm-5">
+
                 </div>
               </div>
             </div>

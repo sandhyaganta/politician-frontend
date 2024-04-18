@@ -3,6 +3,7 @@ import { UserServiceService } from '../../user-service.service';
 import { AdminServiceService } from '../../admin-service.service';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { CommonService } from '../../services/common.service';
 
 @Component({
   selector: 'app-admin-viewcomplients',
@@ -17,21 +18,30 @@ export class AdminViewcomplientsComponent {
   post:any
   uid:any
   cid:any
+  aid:any
 
-  constructor(private api:UserServiceService,private service:AdminServiceService,private form:FormBuilder){}
+  constructor(private api:UserServiceService,private service:AdminServiceService,private form:FormBuilder,private common: CommonService){}
   ngOnInit():void{
+     this.aid = localStorage.getItem('id');
+    
    
 
     this.Replayform=this.form.group({
       replay:[''],
+      role:['admin'],
       date:[''],
+      complientsid:[''],
+      roleid: ['']
       
     })
     this.api.getcomplients().subscribe((res:any) => {
 
       this.complients=res
-      this.cid=this.complients.map((cc:any) =>cc._id)
-      console.log("allcomplients",this.cid);
+      
+
+      console.log("res",this.complients);
+      
+      
       
     })
 
@@ -44,19 +54,20 @@ export class AdminViewcomplientsComponent {
 
   replay(r:any){
     let rr={
-      complientid:r._id,
+      complientid:r.id,
       replay:this.Replayform.value.replay,
       role:'admin',
       date:this.Replayform.value.date,
+      roleid:this.aid
 
     }
     this.service.adminreplay(rr).subscribe((res:any) => {
       this.post=res
-      console.log(rr,"replay",this.post);
+      console.log("replay",this.post);
       
     })
-    
-
   }
+
+  
 
 }

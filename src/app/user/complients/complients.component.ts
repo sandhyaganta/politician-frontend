@@ -40,20 +40,13 @@ export class ComplientsComponent {
   ) {}
   ngOnInit(): void {
     this.uid = localStorage.getItem('id');
-
-    console.log('uuuuu', this.uid);
-
-    this.api.getcomplient().subscribe((res: any) => {
+    this.api.getcomplient(this.uid).subscribe((res: any) => {
       this.allcomplient = res;
-      console.log('res', this.allcomplient);
-
-      // this.cid=this.complients.map((cc:any) =>cc._id)
-      // console.log("allcomplients",this.cid);
     });
 
     this.Registrationform = this.form.group({
       date: [''],
-      complients: [''],
+      complient: [''],
       userid: [''],
     });
   }
@@ -62,17 +55,14 @@ export class ComplientsComponent {
     let cc = {
       date: this.Registrationform.value.date,
       userid: this.uid,
-      complients: this.Registrationform.value.complients,
+      complient: this.Registrationform.value.complient,
     };
-    console.log(cc);
-
     this.api.usercomplients(cc).subscribe((res: any) => {
       console.log('complients', res);
     });
   }
 
   replies(id:any) {
-    console.log("id",id);
     this.common.setComplient(id);
     this.router.navigate(['dash1/replay'])
   }

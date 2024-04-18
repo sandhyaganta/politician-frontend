@@ -18,67 +18,48 @@ import { AdminServiceService } from '../../admin-service.service';
   styleUrl: './view-post.component.css',
 })
 export class ViewPostComponent {
-  posts: any;
+  notification: any;
+  notificationreplay: any;
   uploadform!: FormGroup;
   ss: any;
   likes: any;
-  pid:any
-  uid:any
+  nid: any;
+  uid: any;
   constructor(
     private api: UserServiceService,
     private form: FormBuilder,
     private service: AdminServiceService
   ) {}
   ngOnInit(): void {
-    this.uid =localStorage.getItem('id')
-    console.log(this.uid, 'uid');
+    this.uid = localStorage.getItem('id');
     this.uploadform = this.form.group({
       comments: [''],
-      userid:[''],
-      postid:['']
+      userid: [''],
+      notificationid: [''],
     });
 
     this.api.getallpost().subscribe((res: any) => {
       console.log(res, 'posts');
-      this.posts = res;
-      this.pid=this.posts.map((p:any) =>p._id)
-      console.log("pid",this.pid)
-      console.log('posts', this.posts);
+      this.notification = res;
     });
-
-
-    this.api.getcomment().subscribe((res: any) => {
-      console.log(res, 'posts');
-      this.posts = res;
-      console.log('posts', this.posts);
-      
-    });
-
-    // this.api.getallpost().subscribe((res: any) => {
-    //   console.log(res, 'like');
-    //   this.likes = res;
-    //   console.log('likes', this.likes);
-    // });
   }
 
-  like(l:any) {
+  like(l: any) {
     let s = {
-      id:l._id,
-      like:(l.like)+1
-    }
+      id: l._id,
+      like: l.like + 1,
+    };
     this.service.postupdate(s).subscribe((res: any) => {
       console.log('res', res);
     });
   }
 
-  comment() {
-  
-    
+  comment(r: any) {
     let dd = {
-      userid:this.uid,
-      postid:this.pid,
-      comments:this.uploadform.value.comments
-    }
+      userid: this.uid,
+      notificationid: r._id,
+      comments: this.uploadform.value.comments,
+    };
     this.api.comments(dd).subscribe((res: any) => {
       console.log(res, 'usercheck');
     });

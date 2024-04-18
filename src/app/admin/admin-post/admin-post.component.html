@@ -14,27 +14,27 @@
                       type="text"
                       class="form-control"
                       id="floatingInput"
-                      placeholder="videoname/photoname"
+                      placeholder="Title"
                       formControlName="title"
                     />
-                    <label for="floatingInput">vedieo/photoname</label>
+                    <label for="floatingInput">Title</label>
                   </div>
                   <br />
                   <div>
-                    <label>type</label>
+                    <label> File type</label>
                     <input
                       type="radio"
-                      name="type"
+                      name="filetype"
                       value="photo"
                       class="d-inline p-2 bg-primary w-25"
-                      formControlName="type"
+                      formControlName="filetype"
                     />photo
                     <input
                       type="radio"
-                      name="type"
+                      name="filetype"
                       value="video"
                       class="d-inline p-2 bg-dark w-25"
-                      formControlName="type"
+                      formControlName="filetype"
                     />video
                   </div>
                   <br />
@@ -44,7 +44,7 @@
                       class="form-control"
                       id="floatingInput"
                       placeholder="paste a vedieo"
-                      formControlName="files"
+                      formControlName="filepath"
                       (change)="select($event)"
                     />
                     <label for="floatingInput">vedieo/photo</label>

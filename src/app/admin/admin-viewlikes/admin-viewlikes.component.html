@@ -9,14 +9,11 @@
               <div class="row">
                 <div class="col-sm-6">
                   <p>
-                    video/photoname:<span>{{ r.title }}</span>
+                    Title:<span>{{ r.title }}</span>
                   </p>
-                  <p>id:<span>{{r._id}}</span></p>
-
-                  
                   <p>like:<span>{{r.like}}</span></p>
                   <label for="">Comments</label>
-                  <p *ngFor="let c of r.commentsdetails"><span>{{c.comments}}</span></p>
+                  <p *ngFor="let c of r.notifications" ><span>{{c.comments}}</span></p>
                 </div>
               </div>
             </div>

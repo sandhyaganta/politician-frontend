@@ -27,11 +27,11 @@ export class AdminPostComponent {
   constructor(private form: FormBuilder, private api: AdminServiceService) {}
   ngOnInit(): void {
     this.uploadform = this.form.group({
-      files: [''],
+      filepath: [''],
       title: [''],
-      type:[''],
+      filetype:[''],
       like:0,
-      comments:[''],
+      
       
     });
     this.textForm=this.form.group({
@@ -59,10 +59,9 @@ export class AdminPostComponent {
     
     let uploadData = new FormData;
     uploadData.append('title', this.uploadform.value.title);
-    uploadData.append('files', this.selectedFile);
-    uploadData.append('type',this.uploadform.value.type);
+    uploadData.append('filepath', this.selectedFile);
+    uploadData.append('filetype',this.uploadform.value.filetype);
     uploadData.append('like',this.uploadform.value.like);
-    uploadData.append('comments',this.uploadform.value.comments)
     console.log('data', uploadData);
 
     this.api.adminpost(uploadData).subscribe((res: any) => {
