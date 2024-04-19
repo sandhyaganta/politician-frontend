@@ -1,41 +1,26 @@
-/* .con{
-    background-color: ;
-    height: 920px;
-} */
+.con{
+ 
+  height: 410px;
+    
+}
 .col{
     background-color:white;
-    
-    color: black;
-    
+    color: black; 
 
 }
 
-.animate-charcter
-{
-   text-transform: uppercase;
-  background-image: linear-gradient(
-    -225deg,
-    #716296 0%,
-    #82788d 29%,
-    #f592b9 67%,
-    #111110 100%
-  );
-  background-size: auto auto;
-  background-clip: border-box;
-  background-size: 200% auto;
-  color: #fff;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: textclip 5s linear infinite;
-  display: inline-block;
-}
+.car{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
-@keyframes textclip {
-  to {
-    background-position: 200% center;
-  }
+  background-color: #fa488f;
+  
+
 }
 .pp{
-    font-size: 50px;
+    font-size: 20px ;
+    color: white;
+    
+    
+
+   
 }
