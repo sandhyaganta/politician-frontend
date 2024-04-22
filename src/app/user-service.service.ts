@@ -47,16 +47,6 @@ export class UserServiceService {
   userpost(data:any){
     return this.http.post("http://localhost:6010/user/notification/",data,this.jwttoken())
   }
-  userlike(data:any){
-    return this.http.post("http://localhost:6010/userlike/like",data,this.jwttoken())
-
-  }
-  getlike(){
-    return this.http.get("http://localhost:6010/userlike/getlike",this.jwttoken())
-  }
-  likeupdate(data:any){
-    return this.http.put("http://localhost:6010/userlike/updateById/"+data.id,data,this.jwttoken())
-  }
   usercomplients(data:any){
     return this.http.post("http://localhost:6010/user/complients",data)
   }
@@ -70,10 +60,11 @@ export class UserServiceService {
     return this.http.get("http://localhost:6010/user/notification/all",this.jwttoken())
   }
   getcomplient(uid:any){
-    return this.http.get("http://localhost:6010/user/complients/"+uid)
+    return this.http.get("http://localhost:6010/user/complients/"+uid,this.jwttoken())
   }
-  getbycomplient(id:any){
-    return this.http.get("http://localhost:6010/complients/getById/"+id)
+  getreplay(id:any){
+    return this.http.get("http://localhost:6010/user/complients/all/"+id,this.jwttoken())
+
   }
   forgotpassword(data:any){
     return this.http.post('http://localhost:6010/reset-password',data)

@@ -1,4 +1,4 @@
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { Component, inject } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { AsyncPipe } from '@angular/common';
@@ -27,6 +27,7 @@ import { map, shareReplay } from 'rxjs/operators';
   ]
 })
 export class AdminDasboardComponent {
+  constructor( private router:Router){}
   private breakpointObserver = inject(BreakpointObserver);
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
@@ -34,4 +35,11 @@ export class AdminDasboardComponent {
       map(result => result.matches),
       shareReplay()
     );
+
+
+    logout(){
+      this.router.navigate(['/mainpage'])
+      localStorage.removeItem("token")
+
+    }
 }

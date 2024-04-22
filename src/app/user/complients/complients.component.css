@@ -3,4 +3,8 @@
 }
 .com{
     color:rgb(130, 130, 241)
+
+}
+.com:hover{
+    cursor: pointer;
 }

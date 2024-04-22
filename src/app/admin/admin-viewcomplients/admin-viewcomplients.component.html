@@ -10,18 +10,16 @@
                 <div class="col-sm-7">
                   <label
                     >complients:
-                    <p class="pp" >{{ r.complient[0]?.complient }}</p></label
+                    <p class="pp" (click)="getreplays(r.complient[0]._id)">{{ r.complient[0]?.complient }}</p> </label
                   >
-                  <p>{{r.replay}}</p>
+                  <p>{{ r.replay }}</p>
                   <br />
                   <label
                     >Compliant By :
                     <p class="p1">
-                      {{ r.fristname }}<br />{{
-                        r.lastname
-                      }}<br />{{ r.mobileno }}<br />{{
-                        r.village
-                      }}<br />{{ r.mandal }}
+                      {{ r.fristname }}<br />{{ r.lastname }}<br />{{
+                        r.mobileno
+                      }}<br />{{ r.village }}<br />{{ r.mandal }}
                     </p></label
                   >
 
@@ -29,16 +27,16 @@
                     <form [formGroup]="Replayform">
                       <div class="row">
                         <div class="col-sm-10">
-                            <div class="form-floating mb-3">
-                                <input
-                                  type="date"
-                                  class="form-control"
-                                  id="floatingInput"
-                                  placeholder="date"
-                                  formControlName="date"
-                                />
-                                <label for="floatingInput">Date</label>
-                              </div>
+                          <div class="form-floating mb-3">
+                            <input
+                              type="date"
+                              class="form-control"
+                              id="floatingInput"
+                              placeholder="date"
+                              formControlName="date"
+                            />
+                            <label for="floatingInput">Date</label>
+                          </div>
                           <div class="form-floating mb-3">
                             <input
                               type="text"
@@ -51,7 +49,11 @@
                           </div>
 
                           <div class="text-center mt-3">
-                            <button class="btn btn-primary" type="submit" (click)="replay(r)">
+                            <button
+                              class="btn btn-primary"
+                              type="submit"
+                              (click)="replay(r)"
+                            >
                               submit
                             </button>
                           </div>
@@ -61,7 +63,15 @@
                   </div>
                 </div>
                 <div class="col-sm-5">
+                  <div *ngFor="let rr of replays">
+                    <div class="card mt-2 " >
+                      <div class="card-body">
+                        <p *ngFor="let rrr of rr.complientsreplay">{{rrr.replay}}</p>
 
+
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

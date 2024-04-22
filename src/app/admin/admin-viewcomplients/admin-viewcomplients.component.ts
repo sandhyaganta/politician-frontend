@@ -16,9 +16,8 @@ export class AdminViewcomplientsComponent {
   complients:any
   Replayform!:FormGroup
   post:any
-  uid:any
-  cid:any
   aid:any
+  replays:any
 
   constructor(private api:UserServiceService,private service:AdminServiceService,private form:FormBuilder,private common: CommonService){}
   ngOnInit():void{
@@ -30,33 +29,30 @@ export class AdminViewcomplientsComponent {
       replay:[''],
       role:['admin'],
       date:[''],
-      complientsid:[''],
-      roleid: ['']
+      roleid: [this.aid]
       
     })
     this.api.getcomplients().subscribe((res:any) => {
 
       this.complients=res
-      
+       console.log("res",this.complients);
+       })
 
-      console.log("res",this.complients);
-      
-      
-      
-    })
+  }
 
-    // this.service.getreplay().subscribe((res:any) => {
-    //   this.replay=res
-    // })
-
-
+  getreplays(id:any){
+     this.api.getreplay(id).subscribe((res:any) =>{
+        this.replays=res
+        console.log("replays",this.replays);
+        
+       })
   }
 
   replay(r:any){
     let rr={
-      complientid:r.id,
+      complientsid:r.complient[0]?._id,
       replay:this.Replayform.value.replay,
-      role:'admin',
+      role:this.Replayform.value.role,
       date:this.Replayform.value.date,
       roleid:this.aid
 

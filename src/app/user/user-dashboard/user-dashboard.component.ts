@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { Router, RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-user-dashboard',
@@ -9,5 +9,11 @@ import { RouterLink, RouterOutlet } from '@angular/router';
   styleUrl: './user-dashboard.component.css'
 })
 export class UserDashboardComponent {
+  constructor( private router:Router){}
+  logout(){
+    this.router.navigate(['/mainpage'])
+      localStorage.removeItem("token")
+
+  }
 
 }

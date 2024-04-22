@@ -4,6 +4,9 @@
 .pp{
     color:rgb(241, 53, 53)
 }
+.pp:hover{
+  cursor: pointer;
+}
 .re{
     
   justify-content: center;
